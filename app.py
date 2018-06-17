@@ -2,19 +2,16 @@
 import sys
 
 # External libraries
+import bot
 sys.path.append("include")
-from tools import _Tools
-from bot import _Bot
-from server import _Server
+from threads import _Threads
 
 # Definition of external libraries
-Bot = _Bot()
-Server = _Server()
-Tools = _Tools()
+Threads = _Threads()
 
+# Main function
 def Main():
-	Bot.initBot()
-	Server.initServer()
-
+	Threads.startAllThreads()
+	bot.BotStart()
 
 Main()

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--<meta charset="utf-8">-->
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>IT-Academy Admin Page</title>
+	<meta name="theme-color" content="#f9658d" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="js/libs/jquery.js"></script>
+	<script src="js/libs/js.cookie.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div id="PreloadBlock">
+		<center>
+			<br><br><br>
+			<h3>Пожалуйста, подождите...</h3>
+			<br>
+			<h4>Ищем предыдущую сессию авторизации</h4>
+		</center>
+	</div>
+	<div id="MainBlock">
+		<center>
+			<div class="MainAuthFormElem">
+				<h2 style="color: #565a5f;">IT-Academy Bot</h2>
+				<h3 style="color: #565a5f;">Панель администратора</h3>
+				<br>
+				<div class="form-group">
+					<input id="MainAuthFormLoginInput" type="text" class="form-control" placeholder="Логин">
+				</div>
+				<div class="form-group">
+					<input id="MainAuthFormPasswordInput" type="password" class="form-control" placeholder="Пароль">
+				</div>
+				<button id="MainAuthFormAuthBtn" class="btn btn-default">Войти</button>
+				<br><br>
+			</div>
+		</center>
+	</div>
+	<div id="AccountBlock">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">IT-Academy</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="NavbarOneBtnElem active"><a id="NavbarMainBtn" class="NavbarOneBtn">Главная</a></li>
+						<li class="NavbarOneBtnElem"><a id="NavbarFaqBtn" class="NavbarOneBtn">FAQ</a></li>
+						<li class="NavbarOneBtnElem"><a id="NavbarReviewsBtn" class="NavbarOneBtn">Отзывы</a></li>
+						<li class="NavbarOneBtnElem"><a id="NavbarSettingsBtn" class="NavbarOneBtn">Настройки</a></li>
+						<li class="NavbarOneBtnElem"><a id="NavbarExitBtn" class="NavbarOneBtn">Выход</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div id="AccountMainBlockElem">
+			<div class="row MainTablesElem">
+				<div class="col-xs-12 col-sm-6">
+					<div class="panel panel-danger">
+						<div class="panel-heading">Неподтверждённые отзывы:</div>
+						<div class="panel-body">
+							<center id="AccountMainReviewsAllNotConfirmedListElem">
+								<h3>Неподтверждённых отзывов нет.</h3>
+							</center>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">Статистика использования бота:</div>
+						<div class="panel-body">
+							<div id="AccountMainBotStatsPlot"></div>
+							<h4 id="BotStatsText">Бот был запущен недавно. Статистика будет составлена позже.</h4>
+						</div>
+					</div>
+					<div class="panel panel-warning">
+						<div class="panel-heading">Последнее время обновления данных:</div>
+						<div class="panel-body">
+							<h4 id="LastUpdateTimeText">Время неизвестно.</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="AccountFaqBlockElem">
+			<div class="row SettingsTablesElem">
+				<div class="col-xs-12 col-sm-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">Добавить FAQ(взрослые):</div>
+						<div class="panel-body">
+							<center>
+								<div class="form-group">
+									<label>Вопрос: </label>
+									<input id="AccountFaqAdultNewQuestionInput" class="form-control" type="text">
+								</div>
+								<div class="form-group">
+									<label>Ответ: </label>
+									<input id="AccountFaqAdultNewAnswerInput" class="form-control" type="text">
+								</div>
+								<button id="AccountFaqAdultAddNewBtn" class="btn btn-primary">Добавить</button>
+							</center>
+						</div>
+					</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">Добавить FAQ(дети):</div>
+						<div class="panel-body">
+							<center>
+								<div class="form-group">
+									<label>Вопрос: </label>
+									<input id="AccountFaqKidsNewQuestionInput" class="form-control" type="text">
+								</div>
+								<div class="form-group">
+									<label>Ответ: </label>
+									<input id="AccountFaqKidsNewAnswerInput" class="form-control" type="text">
+								</div>
+								<button id="AccountFaqKidsAddNewBtn" class="btn btn-primary">Добавить</button>
+							</center>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<div class="panel panel-success">
+						<div class="panel-heading">Текущий FAQ(взрослые):</div>
+						<div class="panel-body">
+							<center id="AccountFaqAdultListElem">
+							</center>
+						</div>
+					</div>
+					<div class="panel panel-success">
+						<div class="panel-heading">Текущий FAQ(дети):</div>
+						<div class="panel-body">
+							<center id="AccountFaqKidsListElem">
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="AccountReviewsBlockElem">
+			<div class="row SettingsTablesElem">
+				<div class="col-xs-12 col-sm-6">
+					<div class="panel panel-danger">
+						<div class="panel-heading">Неподтверждённые отзывы:</div>
+						<div class="panel-body">
+							<center id="AccountReviewsAllNotConfirmedListElem">
+							</center>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<div class="panel panel-success">
+						<div class="panel-heading">Подтверждённые отзывы:</div>
+						<div class="panel-body">
+							<center id="AccountReviewsAllConfirmedListElem">
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="AccountSettingsBlockElem">
+			<div class="row SettingsTablesElem">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Настройки:</div>
+					<div class="panel-body">
+						<div class="form-group col-sm-4 col-md-10">
+							<label>Время автообновления данных:</label>
+							<input type="number" class="form-control" placeholder="60">
+							<br>
+							<button class="btn btn-primary">Сохранить</button>
+							<button class="btn btn-warning">Обновить сейчас</button>
+						</div>
+						<div class="form-group col-sm-4 col-md-10">
+							<label>Сменить расписание:</label>
+							<br>
+							<button class="btn btn-success">Выбрать файл</button>
+						</div>
+						<div class="form-group col-sm-4 col-md-10">
+							<label>Новый пароль:</label>
+							<input type="password" class="form-control" placeholder="********">
+							<br>
+							<button class="btn btn-primary">Изменить</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/libs/tools.js"></script>
+<script src="js/index_ui.js"></script>
+<script src="js/index_api.js"></script>
+<script src="js/index_main.js"></script>
+</html>

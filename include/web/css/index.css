@@ -1,0 +1,137 @@
+/******************************************/
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-color: #e8e8e8;
+	font-family: "Roboto", sans-serif;
+	/*Disable selection!*/
+	/*-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	user-select: none;*/
+}
+
+/*::-webkit-input-placeholder {
+	color: white;
+	text-align: center;
+}
+
+:-moz-placeholder {
+	color: white;
+	text-align: center;
+}
+
+::-moz-placeholder {
+	color: white;
+	text-align: center;
+}
+
+:-ms-input-placeholder {
+	color: white;
+	text-align: center;
+}*/
+
+/******************************************/
+
+.form-control {
+	width: 75%;
+}
+
+.navbar-default .navbar-brand {
+	color: #ff4747;
+}
+
+/*.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	background-color: #aee8ff;
+}*/
+
+.NavbarOneBtnElem {
+	cursor: pointer;
+}
+
+/******************************************/
+
+#PreloadBlock {
+	display: none;
+}
+
+/******************************************/
+
+#MainBlock {
+	display: none;
+}
+
+.MainAuthFormElem {
+	background-color: white;
+	width: 40%;
+	border: 2px solid #00adff;
+	border-radius: 4px;
+	margin-top: 100px;
+}
+
+/******************************************/
+
+#AccountBlock {
+	display: none;
+}
+
+/******************************************/
+
+#AccountMainBlockElem {
+	display: block;
+}
+
+.MainTablesElem {
+	margin: 0px 40px;
+}
+
+.OneReviewElem {
+	width: 100%;
+	border: 2px solid #ffd6a3;
+	border-radius: 4px;
+	margin-bottom: 15px;
+	padding: 7px 2px;
+}
+
+/******************************************/
+
+#AccountFaqBlockElem {
+	display: none;
+}
+
+/******************************************/
+
+#AccountReviewsBlockElem {
+	display: none;
+}
+
+/******************************************/
+
+#AccountSettingsBlockElem {
+	display: none;
+}
+
+.SettingsTablesElem {
+	margin: 0px 40px;
+}
+/******************************************/
+
+/******************************************/
+
+@media screen and (max-width: 800px) {
+	.MainAuthFormElem {
+		width: 75%;
+		margin-top: 50px;
+	}
+	.MainTablesElem {
+		margin: 0px 10px;
+	}
+	.SettingsTablesElem {
+		margin: 0px 10px;
+	}
+}
+
+/******************************************/

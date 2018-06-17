@@ -1,0 +1,3 @@
+class _Bot:
+	def initBot(self):
+		print("[i] Initializing TG-Bot...")
